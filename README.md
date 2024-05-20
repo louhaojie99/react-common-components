@@ -1,53 +1,40 @@
-# react-common-components
-反应常见组件
+# react-components
 
+[![NPM version](https://img.shields.io/npm/v/react-components.svg?style=flat)](https://npmjs.org/package/react-components)
+[![NPM downloads](http://img.shields.io/npm/dm/react-components.svg?style=flat)](https://npmjs.org/package/react-components)
 
-## AsyncButton
+好的的组件
 
-```tsx
+## Usage
 
-/**
- * 一个支持异步的按钮，onClick 传入异步函数则自动显示loading
- */
-import React, { useState } from 'react';
-import { Button, type ButtonProps } from 'antd';
+TODO
 
-const AsyncButton = React.memo<ButtonProps>(props => {
-  const { onClick, ...restProps } = props;
-  const [loading, setLoading] = useState<boolean | undefined>(undefined);
+## Options
 
-  const handleClick: ButtonProps['onClick'] = async e => {
-    if (!onClick) return;
+TODO
 
-    try {
-      setLoading(true);
-      await onClick?.(e);
-    } finally {
-      setLoading(false);
-    }
-  };
+## Development
 
-  return <Button loading={loading} onClick={handleClick} {...restProps} />;
-});
+```bash
+# install dependencies
+$ pnpm install
 
-export default AsyncButton;
+# develop library by docs demo
+$ pnpm start
 
+# build library source code
+$ pnpm run build
+
+# build library source code in watch mode
+$ pnpm run build:watch
+
+# build docs
+$ pnpm run docs:build
+
+# check your project for potential problems
+$ pnpm run doctor
 ```
 
-使用 AsyncButton 组件的栗子：
+## LICENSE
 
-```tsx
-
-<AsyncButton
-  type="primary"
-  onClick={async () => {
-    // 这里可以执行异步操作，比如发起网络请求
-    console.log('异步操作开始');
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    console.log('异步操作结束');
-  }}
->
-  点击我
-</AsyncButton>
-
-```
+MIT
