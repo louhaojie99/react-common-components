@@ -2,6 +2,16 @@
   "name": "react-components",
   "version": "0.0.1",
   "description": "反应常见组件",
+  "keywords": [
+    "react",
+    "components",
+    "react-components"
+  ],
+  "homepage": "https://louhaojie99.github.io/react-componsts",
+  "repository": {
+    "type": "git",
+    "url": "https://louhaojie99.github.io/react-componsts"
+  },
   "license": "MIT",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -11,6 +21,7 @@
   "scripts": {
     "build": "father build",
     "build:watch": "father dev",
+    "deploy": "gh-pages -d dist",
     "dev": "dumi dev",
     "docs:build": "dumi build",
     "doctor": "father doctor",

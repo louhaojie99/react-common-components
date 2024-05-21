@@ -1,1 +1,1 @@
-export { default as Foo } from './Foo';
+// 根文件-这里处理导出组件
